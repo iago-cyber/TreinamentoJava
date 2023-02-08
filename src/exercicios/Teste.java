@@ -1,7 +1,5 @@
 package exercicios;
 
-import java.util.Scanner;
-
 class Teste {
 	public static void main(String[] args) {
 		// Exercicios ex = new Exercicios();
@@ -70,8 +68,13 @@ class Teste {
 
 		// PessoaFisica iago = new PessoaFisica();
 		// iago.setCPF("05851405104");
+
+		// ManipuladorDeContas gerente = new ManipuladorDeContas();
+		// gerente.criaConta();
+
+		// new TestaArrays();
 		
-		ManipuladorDeContas gerente = new ManipuladorDeContas();
-		gerente.criaConta();
+		TestaSplit ts= new TestaSplit();
+		System.out.println(ts.ordemInvertida("Socorram-me, subi no ônibus em Marrocos"));
 	}
 }

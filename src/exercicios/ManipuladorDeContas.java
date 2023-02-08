@@ -10,33 +10,47 @@ public class ManipuladorDeContas {
 
 		if (tipoDeConta == 1) {
 			ContaCorrente conta = new ContaCorrente();
+
 			System.out.println("Digite o nome do titular:");
-			conta.setNomeDoTitular(s.nextLine());
+			conta.setNomeDoTitular(s.next() + s.nextLine());
 			System.out.println("Digite o numero da conta:");
 			conta.setNumeroDaConta(s.nextInt());
 			System.out.println("Digite a agencia:");
-			conta.setAgencia(s.nextLine());
-			Data data = new Data();
-			System.out.println("Digite a data de criação da conta");
-			data.setData(s.nextInt(), s.nextInt(), s.nextInt());
-			conta.setDataAbertura(data);
-			System.out.print(conta.recuperaDadosParaImpressao());
+			conta.setAgencia(s.next() + s.nextLine());
+			try {
+				Data data = new Data();
+				System.out.println("Digite a data de criação da conta: dia mes ano");
+				data.setData(s.nextInt(), s.nextInt(), s.nextInt());
+				conta.setDataAbertura(data);
+				System.out.print(conta.recuperaDadosParaImpressao());
+			} catch (DataInvalidaException e) {
+				System.out.println(e);
+			}
+			
 			s.close();
-		}
-		if (tipoDeConta == 2) {
+		} else if (tipoDeConta == 2) {
 			ContaPoupanca conta = new ContaPoupanca();
+
 			System.out.println("Digite o nome do titular:");
-			conta.setNomeDoTitular(s.nextLine());
+			conta.setNomeDoTitular(s.next() + s.nextLine());
 			System.out.println("Digite o numero da conta:");
 			conta.setNumeroDaConta(s.nextInt());
 			System.out.println("Digite a agencia:");
-			conta.setAgencia(s.nextLine());
-			Data data = new Data();
-			System.out.println("Digite a data de criação da conta: dia mes ano");
-			data.setData(s.nextInt(), s.nextInt(), s.nextInt());
-			conta.setDataAbertura(data);
-			System.out.print(conta.recuperaDadosParaImpressao());
+			conta.setAgencia(s.next() + s.nextLine());
+			try {
+				Data data = new Data();
+				System.out.println("Digite a data de criação da conta: dia mes ano");
+				data.setData(s.nextInt(), s.nextInt(), s.nextInt());
+				conta.setDataAbertura(data);
+				System.out.print(conta.recuperaDadosParaImpressao());
+			} catch (DataInvalidaException e) {
+				System.out.println(e);
+			}
+
+			
 			s.close();
+		} else {
+			System.out.println("Tipo de conta invalida");
 		}
 	}
 }
