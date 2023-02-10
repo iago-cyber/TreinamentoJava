@@ -47,7 +47,7 @@ public abstract class Conta {
 		dados += "\nNumero: " + this.numeroDaConta;
 		dados += "\nAgencia: " + this.agencia;
 		dados += "\nSaldo: R$" + this.saldo;
-		dados += "\nData de Abertura:" + this.dataAbertura.getDataFormatada();
+		dados += "\nData de Abertura: " + this.dataAbertura.getDataFormatada();
 
 		return dados;
 	}

@@ -1,23 +1,34 @@
 package exercicios;
 
 public class Porta {
-	boolean aberta;
-	String cor;
-	double x, y, z;
+	private boolean aberta;
+	private String cor;
+	private double x, y, z;
 
-	void abre() {
-		aberta = true;
+	public void abre() {
+		this.aberta = true;
 	}
 
-	void fecha() {
-		aberta = false;
+	public void fecha() {
+		this.aberta = false;
 	}
 
-	void pinta(String cor) {
+	public void pinta(String cor) {
 		this.cor = cor;
 	}
+	public String getCor(){
+		return this.cor;
+	}
 
-	boolean estaAberta() {
+	public boolean estaAberta() {
 		return aberta;
+	}
+	public void setDimencoes(double x, double y, double z){
+		this.x = x;
+		this.y = y;
+		this.z = z;
+	}
+	public String getDimencoes(){
+		return "\nx: "+this.x+" y: "+this.y+" z: "+this.z;
 	}
 }

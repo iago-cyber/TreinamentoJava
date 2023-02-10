@@ -1,25 +1,36 @@
 package exercicios;
 
 public class Casa {
-	String cor;
-	Porta porta1 = new Porta();
-	Porta porta2 = new Porta();
-	Porta porta3 = new Porta();
-	
-	void pinta(String cor){
-		this.cor=cor;
+	private String cor;
+	private int totalDePortas;
+	private Porta[] portas = new Porta[3];
+
+	public void pinta(String cor) {
+		this.cor = cor;
 	}
-	int quantasPortasEstaoAbertas(){
-		int quantidade=0;
-		if(porta1.aberta==true){
-			quantidade+=1;
+
+	public int quantasPortasEstaoAbertas() {
+		int portasAbertas = 0;
+
+		for (int i = 0; i < portas.length; i++)
+			if (portas[i].estaAberta() == true) {
+				portasAbertas += 1;
+			}
+
+		return portasAbertas;
+	}
+
+	public void adicionaPorta(Porta porta) {
+		for (int i = 0; i < this.portas.length; i++) {
+			if (this.portas[i] == null) {
+				this.portas[i] = porta;
+				totalDePortas++;
+				break;
+			}
 		}
-		if(porta2.aberta==true){
-			quantidade+=1;
-		}
-		if(porta3.aberta==true){
-			quantidade+=1;
-		}
-		return quantidade;
+	}
+
+	public int getTotalDePortas() {
+		return this.totalDePortas;
 	}
 }
